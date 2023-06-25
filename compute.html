@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="A++">Add A</button>
+        <button v-on:click="B++">Add B</button>
+
+        <span>A = {{A}}</span>
+        <span>B = {{B}}</span>
+
+        <h1>My age is 23</h1>
+        <span>A + Age = {{getAge(A)}}</span>
+        <span>B + Age = {{getAge(B)}}</span>
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let app = new Vue(
+        {
+            el:'#app',
+            data:
+            {
+                age: 23,
+                A: 0,
+                B: 0,
+                Result:''
+            },
+
+            methods:
+            {
+                getAge:function(letter)
+                {
+                    let display = this.Result = parseInt(this.age)+parseInt(letter)
+                    return display
+                }
+            }
+
+        }
+    );
+</script>

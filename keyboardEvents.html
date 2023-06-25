@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <div id="keyboard-event">
+        <h1>{{Topic}}</h1>
+
+        <input type="text" v-model = "FullName" v-on:keyup.enter="logName()" name="" id="" placeholder="Name">
+        <input type="text" v-model="Age" v-on:keyup.enter="logAge()" name="" id="" placeholder="Age">
+
+        <h1>{{Display}}</h1>
+
+        <!--Display Name-->
+        <h1>Display Name</h1>
+        <input type="text" v-model = "FirstName" name="" id="" placeholder="FirstName">
+        <input type="text" v-model = "MiddleName" name="" id="" placeholder="MiddleName">
+        <input type="text" v-model = "LastName" name="" id="" placeholder="LastName">
+
+        <button v-on:click="DisplayName(FirstName, MiddleName, LastName)">Submit</button>
+        
+        <p>{{Result}}</p>
+    </div>
+    
+</body>
+</html>
+<script>
+    let app = new Vue(
+        {
+            el:'#keyboard-event',
+            data:
+            {
+                Topic:'Keyboard Event',
+                Display: '',
+                Age: 0,
+                FirstName: '',
+                MiddleName: '',
+                LastName: '',
+                Result: '',
+                FullName: ''
+            },
+
+            methods:
+            {
+                logName:function()
+                {
+                    let Result = this.FullName
+                    this.Display = 'I am '+Result
+                },
+
+                logAge:function()
+                {
+                    let old = this.Age
+                    this.Display = 'You are '+old+' years old'
+                },
+
+              
+                /*Data Binding*/
+                DisplayName:function()
+                {
+                    this.Result = this.FirstName+this.MiddleName+this.LastName
+
+                    
+                }
+            }
+        }
+    );
+
+</script>
