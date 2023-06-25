@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="data-bind">
+        <!---Use of Data-->
+        <h1>I'm {{firstName+' '+middleName+' '+lastName}}</h1>
+
+        <!--Use of method or function-->
+        <h3>{{displayName()}}</h3>
+
+        <a v-bind:href="website">Google</a>
+        <input type="text" v-bind:value="food" name="" id="">
+        <p v-html="sample"></p>
+        <p v-html="websiteTag"></p>
+
+    </div>
+    
+</body>
+</html>
+<script src="js/app.js"></script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="eventModif">
+        <label for="">First Number: </label>
+        <input type="text" v-model="firstValue"  name="" id=""><br><br>
+
+        <label for="">Second Number: </label>
+        <input type="text" v-model="secondValue"  name="" id=""><br><br>
+
+        <p >Answer: {{answer}}</p>
+
+        <button v-on:click="Addition(firstValue,secondValue)">Add</button>
+        <button v-on:click.once="Subtraction(firstValue,secondValue)">Subtract</button>
+
+        <button v-on:click="click">Click me</button>
+        <a v-on:click.prevent="click2"href="https://facebook.com">Facecbook</a>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    let app = new Vue(
+        {
+            el:'#eventModif',
+            data:
+            {
+                firstValue:0,
+                secondValue:0,
+                answer: 0
+            
+            },
+
+            methods:
+            {
+              Addition:function(a,b)
+              {
+                 this.answer = parseInt(a)+parseInt(b)
+                
+              },
+
+              Subtraction:function(a,b)
+              {
+                this.answer = parseInt(a)-parseInt(b)
+              },
+
+              click2:function()
+              {
+                alert('testingggg')
+              }
+            }
+        }
+    );
+</script>
